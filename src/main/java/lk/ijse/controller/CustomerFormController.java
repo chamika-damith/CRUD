@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -139,5 +136,21 @@ public class CustomerFormController {
         cAddress.clear();
         cName.clear();
         cTel.clear();
+    }
+
+    public void SearchOnAction(ActionEvent actionEvent) throws SQLException {
+        String id = cId.getText();
+
+
+        CustomerDto dto = cusModel.searchCustomer(id);
+
+        if(dto!=null) {
+            cId.setText(dto.getCustomer_id());
+            cAddress.setText(dto.getAddress());
+            cName.setText(dto.getName());
+            cTel.setText(dto.getTel());
+        }else {
+            new Alert(Alert.AlertType.CONFIRMATION,"Customer not found").show();
+        }
     }
 }

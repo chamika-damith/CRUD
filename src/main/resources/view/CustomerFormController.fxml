@@ -20,7 +20,7 @@
          </font>
       </Label>
       <Separator layoutY="24.0" prefHeight="9.0" prefWidth="900.0" />
-      <TextField fx:id="cId" layoutX="45.0" layoutY="101.0" prefHeight="38.0" prefWidth="336.0" promptText="id" stylesheets="@../Style/Dashboard.css" />
+      <TextField fx:id="cId" layoutX="45.0" layoutY="101.0" onAction="#SearchOnAction" prefHeight="38.0" prefWidth="336.0" promptText="id" stylesheets="@../Style/Dashboard.css" />
       <TextField fx:id="cName" layoutX="519.0" layoutY="101.0" prefHeight="38.0" prefWidth="336.0" promptText="Name" styleClass="text-field" stylesheets="@../Style/Dashboard.css" />
       <TextField fx:id="cAddress" layoutX="45.0" layoutY="212.0" prefHeight="38.0" prefWidth="336.0" promptText="Address" styleClass="text-field" stylesheets="@../Style/Dashboard.css" />
       <TextField fx:id="cTel" layoutX="519.0" layoutY="212.0" prefHeight="38.0" prefWidth="336.0" promptText="Mobile" styleClass="text-field" stylesheets="@../Style/Dashboard.css" />
