@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" styleClass="LoginPagebackgroundColor" stylesheets="@../Style/Dashboard.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashboardFormController">
+   <children>
+      <Label layoutX="294.0" layoutY="14.0" text="Dashboard">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="1.0" layoutY="40.0" prefHeight="12.0" prefWidth="700.0" />
+      <ImageView fitHeight="96.0" fitWidth="113.0" layoutX="33.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/1564534_customer_man_user_account_profile_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="96.0" fitWidth="96.0" layoutX="308.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/item.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="96.0" fitWidth="96.0" layoutX="565.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/orders.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="47.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="339.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Item">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="572.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Place Order">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <JFXButton buttonType="RAISED" layoutX="33.0" layoutY="136.0" onAction="#CustomerOnAction" prefHeight="96.0" prefWidth="96.0" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7058823704719543" green="0.5960784554481506" blue="0.5960784554481506" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5175438523292542" green="0.5764619708061218" blue="0.7894737124443054" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton layoutX="308.0" layoutY="136.0" onAction="#ItemOnAction" prefHeight="96.0" prefWidth="96.0" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7058823704719543" green="0.5960784554481506" blue="0.5960784554481506" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5176470875740051" green="0.5764706134796143" blue="0.7882353067398071" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton layoutX="565.0" layoutY="136.0" onAction="#OrderOnAction" prefHeight="96.0" prefWidth="96.0" text=" ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <ripplerFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7058823704719543" green="0.5960784554481506" blue="0.5960784554481506" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5176470875740051" green="0.5764706134796143" blue="0.7882353067398071" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </ripplerFill>
+      </JFXButton>
+   </children>
+</AnchorPane>
