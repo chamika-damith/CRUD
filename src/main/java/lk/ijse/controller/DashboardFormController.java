@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -21,7 +22,13 @@ public class DashboardFormController {
         stage.setTitle("Customer");
     }
 
-    public void ItemOnAction(ActionEvent actionEvent) {
+    public void ItemOnAction(ActionEvent actionEvent) throws IOException {
+        Parent parent=FXMLLoader.load(this.getClass().getResource("/view/ItemForm.fxml"));
+        Scene scene=new Scene(parent);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.setTitle("Item Form");
     }
 
     public void OrderOnAction(ActionEvent actionEvent) {
