@@ -10,8 +10,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.dto.CustomerDto;
+import lk.ijse.dto.ItemDto;
+import lk.ijse.model.CustomerModel;
+import lk.ijse.model.ItemModel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ItemFormController {
     public TextField code;
@@ -25,6 +30,8 @@ public class ItemFormController {
     public TableColumn colAction;
     public AnchorPane itemRoot;
 
+    ItemModel itModel=new ItemModel();
+
     public void btnClearOnAction(ActionEvent actionEvent) {
         clearFeald();
     }
@@ -33,6 +40,21 @@ public class ItemFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+        String codeText = code.getText();
+        String descriptionText = description.getText();
+        String priceText = unitPrice.getText();
+        String qtyText = qty.getText();
+
+        var dto=new ItemDto(codeText,descriptionText,qtyText,priceText);
+
+        try{
+            boolean isSaved=itModel.saveItem(dto);
+            System.out.println("Item saved");
+        } catch (SQLException e) {
+            System.out.println("Error item saving");
+            throw new RuntimeException(e);
+        }
+
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
