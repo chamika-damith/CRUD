@@ -51,4 +51,30 @@ public class ItemModel {
         }
         return dtoList;
     }
+
+    public ItemDto SearchItem(String textCode) throws SQLException {
+        Connection connection=DbConnection.getInstance().getConnection();
+
+        String sql="SELECT * FROM item WHERE code=?";
+
+        PreparedStatement preparedStatement=connection.prepareStatement(sql);
+
+        preparedStatement.setString(1,textCode);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        ItemDto dto = null;
+
+        if (resultSet.next()) {
+            String code = resultSet.getString(1);
+            String description = resultSet.getString(2);
+            String price = resultSet.getString(3);
+            String qty = resultSet.getString(4);
+
+            dto=new ItemDto(code, description, price,qty);
+
+        }
+        
+        return dto;
+    }
 }

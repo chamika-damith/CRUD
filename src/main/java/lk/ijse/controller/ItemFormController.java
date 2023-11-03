@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -118,4 +119,18 @@ public class ItemFormController {
     }
 
 
+    public void txtSearchOnAction(ActionEvent actionEvent) throws SQLException {
+        String textCode = code.getText();
+
+        ItemDto dto=itModel.SearchItem(textCode);
+
+        if (dto!=null) {
+            code.setText(dto.getCode());
+            description.setText(dto.getDescription());
+            unitPrice.setText(dto.getUnitPrice());
+            qty.setText(dto.getQty());
+        }else {
+            new Alert(Alert.AlertType.INFORMATION,"Item not found").show();
+        }
+    }
 }
