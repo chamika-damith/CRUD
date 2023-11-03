@@ -5,7 +5,10 @@ import lk.ijse.dto.ItemDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemModel {
 
@@ -25,5 +28,27 @@ public class ItemModel {
 
         return isSaved;
 
+    }
+
+    public List<ItemDto> getAllItems() throws SQLException {
+        Connection connection=DbConnection.getInstance().getConnection();
+
+        String sql="SELECT * FROM item";
+
+        PreparedStatement preparedStatement=connection.prepareStatement(sql);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        List<ItemDto> dtoList=new ArrayList<>();
+
+        while (resultSet.next()){
+            dtoList.add(new ItemDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+            ));
+        }
+        return dtoList;
     }
 }

@@ -60,10 +60,9 @@
       <TableView fx:id="tblItem" layoutX="14.0" layoutY="327.0" prefHeight="270.0" prefWidth="877.0" style="-fx-background-radius: 9;">
         <columns>
           <TableColumn fx:id="colCode" prefWidth="189.0" text="Code" />
-          <TableColumn fx:id="colDescription" prefWidth="179.0" text="Description" />
-            <TableColumn prefWidth="188.0" text="Unit price" />
-            <TableColumn fx:id="colQty" prefWidth="161.0" text="QTY" />
-            <TableColumn fx:id="colAction" prefWidth="159.0" text="Action" />
+          <TableColumn fx:id="colDescription" prefWidth="259.20001220703125" text="Description" />
+            <TableColumn fx:id="colPrice" prefWidth="222.39999389648438" text="Unit price" />
+            <TableColumn fx:id="colQty" prefWidth="206.39990234375" text="QTY" />
         </columns>
       </TableView>
       <JFXButton layoutX="15.0" layoutY="37.0" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="68.0" styleClass="dashboardButton" stylesheets="@../Style/Dashboard.css" text="&lt;  Back">

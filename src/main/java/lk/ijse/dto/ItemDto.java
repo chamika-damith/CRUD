@@ -3,14 +3,14 @@ package lk.ijse.dto;
 public class ItemDto {
     private String code;
     private String description;
+    private String price;
     private String qty;
-    private String unitPrice;
 
-    public ItemDto(String code, String description, String qty, String unitPrice) {
+    public ItemDto(String code, String description, String price,String qty ) {
         this.code = code;
         this.description = description;
         this.qty = qty;
-        this.unitPrice = unitPrice;
+        this.price = price;
     }
 
     public String getCode() {
@@ -38,11 +38,11 @@ public class ItemDto {
     }
 
     public String getUnitPrice() {
-        return unitPrice;
+        return price;
     }
 
     public void setUnitPrice(String unitPrice) {
-        this.unitPrice = unitPrice;
+        this.price = unitPrice;
     }
 
     public ItemDto() {
@@ -53,8 +53,8 @@ public class ItemDto {
         return "ItemDto{" +
                 "code='" + code + '\'' +
                 ", description='" + description + '\'' +
+                ", unitPrice='" + price + '\'' +
                 ", qty='" + qty + '\'' +
-                ", unitPrice='" + unitPrice + '\'' +
                 '}';
     }
 }

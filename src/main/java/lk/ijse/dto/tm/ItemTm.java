@@ -9,11 +9,11 @@ public class ItemTm {
     public ItemTm() {
     }
 
-    public ItemTm(String code, String description, String qty, String unitPrice) {
+    public ItemTm(String code, String description,  String unitPrice, String qty) {
         this.code = code;
         this.description = description;
-        this.qty = qty;
         this.unitPrice = unitPrice;
+        this.qty = qty;
     }
 
     public String getCode() {
@@ -53,8 +53,8 @@ public class ItemTm {
         return "ItemTm{" +
                 "code='" + code + '\'' +
                 ", description='" + description + '\'' +
-                ", qty='" + qty + '\'' +
                 ", unitPrice='" + unitPrice + '\'' +
+                ", qty='" + qty + '\'' +
                 '}';
     }
 }
